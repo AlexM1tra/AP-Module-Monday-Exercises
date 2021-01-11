@@ -1,10 +1,10 @@
 # AP-Module-Monday-Exercises
 
 ## Exercise 1
-Code complete- unreviewed
+Code complete- Reviewed
 
 ## Exercise 2
-Code complete- working but untested and unreviewed
+Code complete- Reviewed
 
 ## Exercise 3
 Code complete- working but untested and unreviewed
