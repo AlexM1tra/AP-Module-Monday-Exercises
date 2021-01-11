@@ -7,6 +7,8 @@ enum NUMBER_TYPE {
   NAN = 3
 };
 
+// Takes a string and returns a boolean value denoting whether the string contains only numeric characters. 
+// Used to validate inputs before they are converted to the correct type.
 bool isNumeric(std::string input) {
   std::string numericChars = "0123456789.-";
   for (char c : input) {
@@ -17,6 +19,7 @@ bool isNumeric(std::string input) {
   return true;
 }
 
+// Returns true if all characters in the string are 0
 bool stringIsZero(std::string input) {
   for (char c : input) {
     if (c != '0') {
@@ -26,6 +29,8 @@ bool stringIsZero(std::string input) {
   return true;
 }
 
+// Looks at the user entered input and determines whether 
+// the input is NAN (not a number), negative, positive or zero.
 int analyze(std::string input) {
   if (!isNumeric(input)) {
     return NAN;
