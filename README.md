@@ -4,10 +4,10 @@
 Code complete- Reviewed
 
 ## Exercise 2
-Code complete- Reviewed- needs refactoring
+Code complete- Reviewed
 
 ## Exercise 3
-Code complete- Reviewed- needs refactoring
+Code complete- Reviewed
 
 ## Exercise 4
 Code complete- Reivewed- needs refactoring
