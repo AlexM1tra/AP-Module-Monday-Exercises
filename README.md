@@ -2,3 +2,6 @@
 
 ## Exercise 1
 Code complete- unreviewed
+
+## Exercise 2
+Code complete- working but untested and unreviewed
