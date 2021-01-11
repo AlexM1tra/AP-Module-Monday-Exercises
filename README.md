@@ -16,7 +16,7 @@ Code complete- Reivewed- needs refactoring
 Code complete- Reviewed
 
 ## Exercise 6
-Code complete- unreviewed
+Code complete- Reviewed
 
 ## Exercise 7
 Code complete- untested, unreviewed
