@@ -47,6 +47,21 @@ class TemperatureConverter {
     }
 };
 
+bool isNumeric(std::string input) {
+  std::string numericChars = "0123456789.-";
+  for (char c : input) {
+    if (numericChars.find(c) == std::string::npos) {
+      return false;
+    }
+  }
+  try {
+    stof(input);
+  } catch (std::out_of_range) {
+    return false;
+  }
+  return true;
+}
+
 void outputKeyPrompt(std::string fromOrTo) {
   char scaleKeys[] = {'C', 'F', 'K'};
   std::string scales[] = {"Centigrade", "Fahrenheit", "Kelvin"};
@@ -56,20 +71,34 @@ void outputKeyPrompt(std::string fromOrTo) {
   }
 }
 
+char getChoice() {
+  std::string choice;
+  std::cin >> choice;
+  while (toupper(choice[0]) != 'C' && toupper(choice[0]) != 'F' && toupper(choice[0]) != 'K') {
+    std::cout << "Invalid choice. Please choose either 'C', 'F' or 'K'.\n";
+    std::cin >> choice;
+  }
+  return choice[0];
+}
+
 int main() {
+  std::string startingTempString;
   float startingTemp;
-  char choiceFrom;
-  char choiceTo;
 
   std::cout << "Please enter the starting temperature: ";
-  std::cin >> startingTemp;
+  std::cin >> startingTempString;
+  while (!isNumeric(startingTempString)) {
+    std::cout << "Invalid temperature. Please enter a numeric temperature.\n";
+    std::cin >> startingTempString;
+  }
+  startingTemp = stof(startingTempString);
   outputKeyPrompt("from");
-  std::cin >> choiceFrom;
+  char choiceFrom = getChoice();
   std::cout << "Your choice: " << choiceFrom << std::endl;
   outputKeyPrompt("to");
-  std::cin >> choiceTo;
+  char choiceTo = getChoice();
   std::cout << "Converting to: " << choiceTo << std::endl;
 
   TemperatureConverter temperatureConverter = TemperatureConverter(startingTemp, choiceFrom);
-  std::cout << startingTemp << "°" << choiceFrom << " is " << temperatureConverter.convert(choiceTo) << "°" << choiceTo;
+  std::cout << startingTemp << "°" << toupper(choiceFrom) << " is " << temperatureConverter.convert(toupper(choiceTo)) << "°" << choiceTo << std::endl;
 }
