@@ -27,5 +27,3 @@ Code complete- Reviewed
 ## Exercise 9
 Code complete- Reviewed
 
-
-Bugs to be addressed: isNumeric currently allows morse values: "....", "----", ".-.-.-"
