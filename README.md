@@ -4,16 +4,16 @@
 Code complete- Reviewed
 
 ## Exercise 2
-Code complete- Reviewed
+Code complete- Reviewed- needs refactoring
 
 ## Exercise 3
-Code complete- working but untested and unreviewed
+Code complete- Reviewed- needs refactoring
 
 ## Exercise 4
-Code complete and extended- working, tested, unreivewed
+Code complete- Reivewed- needs refactoring
 
 ## Exercise 5
-Code complete- unreviewed
+Code complete- Reviewed
 
 ## Exercise 6
 Code complete- unreviewed
