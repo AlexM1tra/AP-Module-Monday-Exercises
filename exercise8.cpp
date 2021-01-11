@@ -1,5 +1,7 @@
 #include <iostream>
 
+// Takes a string and returns a boolean value denoting whether the string contains only numeric characters. 
+// Used to validate inputs before they are converted to the correct type.
 bool isNumeric(std::string input) {
   std::string numericChars = "0123456789.-";
   for (char c : input) {
@@ -7,17 +9,22 @@ bool isNumeric(std::string input) {
       return false;
     }
   }
+  try {
+    stoi(input);
+  } catch (std::out_of_range) {
+    return false;
+  }
   return true;
 }
 
 int main() {
   std::cout << "Please enter a valid numeric, or \"Q\" to finish:\n";
-  int min = INT32_MAX, max = INT32_MIN;
-  int numericalInput = 0;
+  double min = INT32_MAX, max = INT32_MIN;
+  double numericalInput = 0;
   int numValues = 0;
   std::string input;
   std::cin >> input;
-  while (toupper(input[0]) != 'Q') {
+  while (input.size() != 1 || toupper(input[0]) != 'Q') {
       if (!isNumeric(input)) {
         std::cout << "Invalid value, please try again:\n";
       } else {
