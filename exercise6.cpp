@@ -1,17 +1,42 @@
 #include <iostream>
 
+// Takes a string and returns a boolean value denoting whether the string contains only numeric characters. 
+// Used to validate inputs before they are converted to the correct type.
+bool isValidNumeric(std::string input) {
+  std::string numericChars = "0123456789.-";
+  for (char c : input) {
+    if (numericChars.find(c) == std::string::npos) {
+      return false;
+    }
+  }
+  try {
+    stoi(input);
+  } catch (std::out_of_range) {
+    return false;
+  }
+  return true;
+}
+
+// Validates user's input and returns valid integer.
+int integerInput(std::string errorMessage) {
+  std::string input;
+  std::cin >> input;
+  while (!isValidNumeric(input) || stoi(input) <= 0) {
+    std::cout << errorMessage;
+    std::cin >> input;
+  }
+  return stoi(input);
+}
+
 int main() {
-  int age;
-  int restingPulse;
   std::cout << "Please enter your age: ";
-  std::cin >> age;
+  int age = integerInput("Invalid age. Please enter a positive integer: ");
   std::cout << "Please enter your resting pulse: ";
-  std::cin >> restingPulse;
+  int restingPulse = integerInput("Invalid pulse. Please enter a positive integer: ");
   std::cout << "Resting Pulse: " << restingPulse << " Age: " << age << std::endl << "Intensity Rate\n------------------------------\n";
   int targetHR;
   for (int rate = 40; rate < 96; rate += 5) {
-    targetHR = (((220 - age) - restingPulse) * rate/100) + restingPulse;
-    //TargetHR = ( ( ( 220 – Age ) – RestingHR ) * %intensity ) + RestingHR;
+    targetHR = (((220 - age) - restingPulse) * rate/100) + restingPulse; // Formula for Karvonen heart rate
     std::cout << rate << "%.\t\t" << targetHR << " bpm\n";
   }
 }
