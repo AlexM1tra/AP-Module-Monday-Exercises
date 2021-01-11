@@ -22,10 +22,10 @@ Code complete- Reviewed
 Code complete- Reviewed
 
 ## Exercise 8
-Code complete- untested, unreviewed
+Code complete- Reviewed
 
 ## Exercise 9
-Code complete- untested, unreviewed
+Code complete- Reviewed
 
 
 Bugs to be addressed: isNumeric currently allows morse values: "....", "----", ".-.-.-"
