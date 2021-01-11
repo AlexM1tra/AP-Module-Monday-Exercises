@@ -10,7 +10,7 @@ Code complete- Reviewed
 Code complete- Reviewed
 
 ## Exercise 4
-Code complete- Reivewed- needs refactoring
+Code complete- Reivewed
 
 ## Exercise 5
 Code complete- Reviewed
