@@ -17,29 +17,24 @@ bool isNumeric(std::string input) {
   return true;
 }
 
+// Prompts the user, validates their input and returns valid double.
+double doubleInput(std::string prompt, std::string errorMessage) {
+  std::cout << prompt;
+  std::string input;
+  std::cin >> input;
+  while (!isNumeric(input) || stod(input) <= 0) {
+    std::cout << errorMessage;
+    std::cin >> input;
+  }
+  return stod(input);
+}
+
 int main() {
   const double feetToMetersRatio = 0.3048; // 1 foot is 0.3048 meters
-  std::string lengthString, widthString;
-  double length, width;
-
-  std::cout << "What is the length of the room in feet? ";
-  std::cin >> lengthString;
-  while (!isNumeric(lengthString)) {
-    std::cout << "Invalid length. Please enter a numeric value: ";
-    std::cin >> lengthString;
-  }
-  length = stod(lengthString);
-
-  std::cout << "What is the width of the room in feet? ";
-  std::cin >> widthString;
-  while (!isNumeric(widthString)) {
-    std::cout << "Invalid width. Please enter a numeric value: ";
-    std::cin >> widthString;
-  }
-  width = stod(widthString);
-
-  double areaInFeet = length * width;
-  double areaInMeters = length * feetToMetersRatio * width * feetToMetersRatio;
+  double length = doubleInput("What is the length of the room in feet? ", "Invalid length. Please enter a numeric value: "),
+    width = doubleInput("What is the width of the room in feet? ", "Invalid width. Please enter a numeric value: "),
+    areaInFeet = length * width,
+    areaInMeters = length * feetToMetersRatio * width * feetToMetersRatio;
   std::cout 
     << "Your room's dimension is " << length << " by " << width << " feet, the area is:\n" 
     << areaInFeet << " square foot\n"
