@@ -6,6 +6,8 @@ class TemperatureConverter {
     float startingTempF;
     float startingTempK;
 
+    // Generates the corresponding Fahrenheit and Kelvin 
+    // temperatures from the Centigrade temperature.
     void createTempsFromC(float temperature) {
       this->startingTempC = temperature;
       this->startingTempF = (temperature * 9 / 5) + 32;
@@ -13,14 +15,16 @@ class TemperatureConverter {
     }
 
     void createTempsFromF(float temperature) {
-      createTempsFromC((temperature - 32) * 5 / 9);
+      createTempsFromC((temperature - 32) * 5 / 9); // Conversion to C
     }
 
     void createTempsFromK(float temperature) {
-      createTempsFromC(temperature - 273.15);
+      createTempsFromC(temperature - 273.15); // Conversion to C
     }
 
   public:
+    // startingTemperatureKey is either C, F or K and denotes 
+    // from which temperature we are converting.
     TemperatureConverter(float startingTemperature, char startingTemperatureKey) {
       startingTemperatureKey = toupper(startingTemperatureKey);
       if (startingTemperatureKey == 'C') {
@@ -34,6 +38,7 @@ class TemperatureConverter {
       }
     }
 
+    // Converts to a given temperature scale.
     float convert(char temperatureKey) {
       temperatureKey = toupper(temperatureKey);
       if (temperatureKey == 'C') {
@@ -47,6 +52,8 @@ class TemperatureConverter {
     }
 };
 
+// Takes a string and returns a boolean value denoting whether the string contains only numeric characters. 
+// Used to validate inputs before they are converted to the correct type.
 bool isNumeric(std::string input) {
   std::string numericChars = "0123456789.-";
   for (char c : input) {
@@ -62,6 +69,7 @@ bool isNumeric(std::string input) {
   return true;
 }
 
+// Outputs the options for the different temperature scale choices.
 void outputKeyPrompt(std::string fromOrTo) {
   char scaleKeys[] = {'C', 'F', 'K'};
   std::string scales[] = {"Centigrade", "Fahrenheit", "Kelvin"};
@@ -71,6 +79,7 @@ void outputKeyPrompt(std::string fromOrTo) {
   }
 }
 
+// Validates user's input and returns the user's chosen temperature scale.
 char getChoice() {
   std::string choice;
   std::cin >> choice;
