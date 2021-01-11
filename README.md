@@ -14,3 +14,6 @@ Code complete and extended- working, tested, unreivewed
 
 ## Exercise 5
 Code complete- unreviewed
+
+## Exercise 6
+Code complete- unreviewed
