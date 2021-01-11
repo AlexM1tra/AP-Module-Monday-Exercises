@@ -20,3 +20,6 @@ Code complete- unreviewed
 
 ## Exercise 7
 Code complete- untested, unreviewed
+
+## Exercise 8
+Code complete- untested, unreviewed
