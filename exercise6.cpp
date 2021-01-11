@@ -4,8 +4,14 @@
 // Used to validate inputs before they are converted to the correct type.
 bool isValidNumeric(std::string input) {
   std::string numericChars = "0123456789.-";
-  for (char c : input) {
-    if (numericChars.find(c) == std::string::npos) {
+  int decimalPointCount = 0;
+  for (int index = 0; index < input.size(); index++) {
+    if (input[index] == '.') {
+      decimalPointCount++;
+    }
+    if (decimalPointCount > 1 
+        || (index != 0 && input[index] == '-') 
+        || numericChars.find(input[index]) == std::string::npos) {
       return false;
     }
   }
@@ -39,4 +45,5 @@ int main() {
     targetHR = (((220 - age) - restingPulse) * rate/100) + restingPulse; // Formula for Karvonen heart rate
     std::cout << rate << "%.\t\t" << targetHR << " bpm\n";
   }
+  return 0;
 }
