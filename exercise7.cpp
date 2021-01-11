@@ -11,8 +11,14 @@ enum NUMBER_TYPE {
 // Used to validate inputs before they are converted to the correct type.
 bool isNumeric(std::string input) {
   std::string numericChars = "0123456789.-";
-  for (char c : input) {
-    if (numericChars.find(c) == std::string::npos) {
+  int decimalPointCount = 0;
+  for (int index = 0; index < input.size(); index++) {
+    if (input[index] == '.') {
+      decimalPointCount++;
+    }
+    if (decimalPointCount > 1 
+        || (index != 0 && input[index] == '-') 
+        || numericChars.find(input[index]) == std::string::npos) {
       return false;
     }
   }
@@ -70,4 +76,5 @@ int main() {
     << "Zeros: " << numZeroes << std::endl
     << "Positives: " << numPositives << std::endl
     << "Negatives: " << numNegatives << std::endl;
+  return 0;
 }
