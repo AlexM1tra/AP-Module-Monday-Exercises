@@ -116,4 +116,5 @@ int main() {
 
   TemperatureConverter temperatureConverter = TemperatureConverter(startingTemp, choiceFrom);
   std::cout << startingTemp << "°" << toupper(choiceFrom) << " is " << temperatureConverter.convert(toupper(choiceTo)) << "°" << choiceTo << std::endl;
+  return 0;
 }
