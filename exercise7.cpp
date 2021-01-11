@@ -48,7 +48,7 @@ int main() {
   int numNegatives = 0, numZeroes = 0, numPositives = 0;
   std::string input;
   std::cin >> input;
-  while (toupper(input[0]) != 'Q') {
+  while (input.size() != 1 || toupper(input[0]) != 'Q') {
       switch (analyze(input)) {
         case NEGATIVE:
           numNegatives++;
