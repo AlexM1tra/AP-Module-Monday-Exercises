@@ -10,4 +10,5 @@ int main() {
   std::getline(std::cin, author);
 
   std::cout << author << " says: \"" << quote << "\"\n";
+  return 0;
 }
