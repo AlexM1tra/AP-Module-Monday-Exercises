@@ -5,3 +5,6 @@ Code complete- unreviewed
 
 ## Exercise 2
 Code complete- working but untested and unreviewed
+
+## Exercise 3
+Code complete- working but untested and unreviewed
