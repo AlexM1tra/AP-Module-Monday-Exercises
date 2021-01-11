@@ -4,10 +4,10 @@ int main() {
   std::string quote;
   std::string author;
 
-  std::cout << "What is the quote?" << std::endl;
+  std::cout << "What is the quote? ";
   std::getline(std::cin, quote);
-  std::cout << "Who said this quote?" << std::endl;
+  std::cout << "Who said it? ";
   std::getline(std::cin, author);
 
-  std::cout << author << " said \"" << quote << "\"\n";
+  std::cout << author << " says: \"" << quote << "\"\n";
 }
